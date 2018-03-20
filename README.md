@@ -28,19 +28,26 @@ and paste. You do not need to acknowledge me. The following shows a brief
 example for each programming language:
 
 
-  # Perl
-  my @aux = undef; # this is for keeping intermediate data
-  while (my ($name, $seq, $qual) = readfq(\*STDIN, \@aux)) { print "$seq\n"; }
+### Perl
+```perl
+my @aux = undef; # this is for keeping intermediate data
+while (my ($name, $seq, $qual) = readfq(\*STDIN, \@aux)) { print "$seq\n"; }
+```
 
 
-  # Python: generator function
+### Python: generator function
+```
   for name, seq, qual in readfq(sys.stdin): print seq
+```
 
 
-  -- Lua: closure
+### Lua: closure
+```
   for name, seq, qual in readfq(io.stdin) do print seq end
+```
 
-  /* Go */
+### Go 
+```
   package main
 
   import (
@@ -56,8 +63,10 @@ example for each programming language:
       fmt.Println(r.Seq)
     }
   }
+```
 
-  /* C */
+### C
+```
   #include <zlib.h>
   #include <stdio.h>
   #include "kseq.h"
@@ -73,6 +82,7 @@ example for each programming language:
     gzclose(fp);
     return 0;
   }
+```
 
 
 Some naive benchmarks. To convert a FASTQ containing 25 million 100bp reads to FASTA,
