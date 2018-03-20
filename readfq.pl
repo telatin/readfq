@@ -49,10 +49,12 @@ sub readfq {
 
 my @aux = undef;
 my ($name, $seq, $qual);
-my ($n, $slen, $qlen) = (0, 0, 0);
+my ($n, $slen, $comment, $qlen) = (0, 0, 0);
 while (($name, $seq, $qual) = readfq(\*STDIN, \@aux)) {
 	++$n;
 	$slen += length($seq);
 	$qlen += length($qual) if ($qual);
+	$qual = 'n/a' unless (defined $qual);
+	print "$name;$comment;$seq;$qual\n";
 }
-print join("\t", $n, $slen, $qlen), "\n";
+print STDERR join("\t", $n, $slen, $qlen), "\n";
