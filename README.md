@@ -1,3 +1,13 @@
+# Readfq by Heng Lin
+
+Forked from https://github.com/lh3/readfq
+
+## Changes to the Perl subroutine (see readfq.pl)
+ 
+ * Removed 'defined @array': deprecated, now fatal error 
+ * Added parsing of "comments" in FASTA/FASTQ file names (i.e. string after the first space)
+
+## Original documentation
 Readfq is a collection of routines for parsing the FASTA/FASTQ format. It
 seamlessly parses both FASTA and multi-line FASTQ with a simple interface.
 
