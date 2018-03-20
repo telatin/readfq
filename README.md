@@ -1,4 +1,4 @@
-# Readfq by Heng Lin
+# Readfq (by Heng Li)
 
 Forked from https://github.com/lh3/readfq
 
